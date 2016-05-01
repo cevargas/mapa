@@ -51,7 +51,7 @@ public class CidadesAdapter extends RecyclerView.Adapter<CidadesAdapter.CidadesV
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return cidadesList.get(position).getId();
     }
 
     @Override

@@ -12,23 +12,21 @@ import android.view.ViewGroup;
 import com.vargas.carlos.mapa.R;
 import com.vargas.carlos.mapa.adapters.CidadesAdapter;
 import com.vargas.carlos.mapa.models.Cidades;
-import com.vargas.carlos.mapa.utils.SimpleDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OneFragment extends Fragment {
 
-    private List<Cidades> cidadesList = new ArrayList<>();
     private RecyclerView recyclerView;
     private CidadesAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        cidadesList.clear();
-
         View v = inflater.inflate(R.layout.tab_fragment_1, container, false);
+
+        List<Cidades> cidadesList = new ArrayList<>();
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
 
@@ -57,7 +55,6 @@ public class OneFragment extends Fragment {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
         recyclerView.setAdapter(mAdapter);
 
         return v;
